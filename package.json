@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "Lesson-Local_storage-js",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://goitacademy.github.io/parcel-project-template",
   "scripts": {
     "start": "parcel src/*.html --open",
-    "build": "parcel build src/*.html --public-url /notes_books-2/"
+    "build": "parcel build src/*.html --public-url /Lesson-Local_storage-js/"
   },
   "repository": {
     "type": "git",
