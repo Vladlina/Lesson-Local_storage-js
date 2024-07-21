@@ -8,13 +8,24 @@
  */
 
 // 1. Функція createTask, яка буде забирати дані та створювати 1 task.
+
+import localStorageAPI from './js/localStorageAPI';
+import { renderTasks } from './js/renderTasks';
+
+localStorageAPI.checkStorage();
+renderTasks();
+
 const form = document.querySelector('#task-form');
 
 form.addEventListener('submit', formSubmit);
 
 function formSubmit(e) {
   e.preventDefault();
+  localStorageAPI.addTask(createTask(e));
+  renderTasks();
+}
 
+function createTask(e) {
   const taskName = e.target.elements.taskName.value.trim();
   const taskText = e.target.elements.taskText.value.trim();
   const newTask = {
@@ -22,6 +33,5 @@ function formSubmit(e) {
     taskText,
     id: Date.now(),
   };
-
-  console.log(newTask);
+  return newTask;
 }
